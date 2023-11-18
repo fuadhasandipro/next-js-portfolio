@@ -1,7 +1,121 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import Link from 'next/link'
 import initIsotope from '../../common/initIsotope'
+
+const portfolioData = [
+  {
+    id: 1,
+    title: 'Superhero Kids Foundation INC',
+    url: '//superherokidsfoundationinc.org/',
+    thumb: 'https://i.ibb.co/K09MZk2/superherokids.jpg',
+    cat: 'charity education',
+  },
+  {
+    id: 2,
+    title: 'ACOMERPR',
+    url: '//acomerpr.org',
+    thumb: 'https://i.ibb.co/pdkPHV8/Acomper.png',
+    cat: 'charity environment',
+  },
+  {
+    id: 22,
+    title: 'TheKendey Charity Foundation',
+    url: '//www.thekendeyfoundation.org/',
+    thumb: 'https://i.ibb.co/GMngPk6/thekendey.jpg',
+    cat: 'charity',
+  },
+  {
+    id: 33,
+    title: 'Usigo - Golf, Fellowship, Community',
+    url: '//usigo.org',
+    thumb: 'https://i.ibb.co/QHtxNKb/usigo.jpg',
+    cat: 'charity fitness',
+  },
+  {
+    id: 44,
+    title: 'Fraternity Health and Wellness',
+    url: '//fraternityhealthandwellness.org',
+    thumb: 'https://i.ibb.co/2FzqWQ2/fratenity.jpg',
+    cat: 'charity fitness',
+  },
+  {
+    id: 3,
+    title: 'Lakini Hope Organization',
+    url: '//lakinihope.com',
+    thumb: 'https://i.ibb.co/LYpPNF6/Lakini-Hope.png',
+    cat: 'charity',
+  },
+  {
+    id: 6,
+    title: 'Rotary Club of Auburn',
+    url: '//auburnrotary.org',
+    thumb: 'https://i.ibb.co/vjxpgpQ/Rotary-Club.png',
+    cat: 'charity education',
+  },
+  {
+    id: 7,
+    title: '901bfit',
+    url: '//901bfit.org',
+    thumb: 'https://i.ibb.co/WpgH7Zr/901bfit.png',
+    cat: 'charity lifestyle fitness',
+  },
+  {
+    id: 8,
+    title: 'Student Athletes Rock',
+    url: '//studentathletesrock.org',
+    thumb: 'https://i.ibb.co/Th8JkjM/Student-Athlete.png',
+    cat: 'charity fitness',
+  },
+  {
+    id: 10,
+    title: 'MSP Foundation',
+    url: '//msp-foundation.org',
+    thumb: 'https://i.ibb.co/DYCxLSx/Msp-foundation.png',
+    cat: 'charity education',
+  },
+  {
+    id: 11,
+    title: 'Better Nation School',
+    url: '//betternationschool.org',
+    thumb: 'https://i.ibb.co/vckrLdS/Better-nation-school.png',
+    cat: 'education',
+  },
+  {
+    id: 12,
+    title: 'African Youth Advocate',
+    url: '//africanyouthadvocate.org',
+    thumb: 'https://i.ibb.co/S63RwYm/African-Youth-Advocate.png',
+    cat: 'charity education lifestyle',
+  },
+  {
+    id: 13,
+    title: 'WGI Productions',
+    url: '//wgiproductions.com',
+    thumb: 'https://i.ibb.co/FBNvSjV/WGI-Profuction.png',
+    cat: 'charity education',
+  },
+  {
+    id: 14,
+    title: 'Assured Heart Foundation',
+    url: 'http://assuredheartfoundation.com',
+    thumb: 'https://i.ibb.co/mRrfYYh/Assured.png',
+    cat: 'charity education',
+  },
+  {
+    id: 15,
+    title: 'Foyer De Berault',
+    url: 'http://foyerdeberault.org/',
+    thumb: 'https://i.ibb.co/hZCjH8V/Foyer-D.png',
+    cat: 'charity',
+  },
+  {
+    id: 18,
+    title: 'Sponsor a Senior Inc',
+    url: '//sponsoraseniorinc.org',
+    thumb: 'https://i.ibb.co/Tw2Ng34/sponsor-a-senior.png',
+    cat: 'charity lifestyle',
+  },
+]
 
 const WorksStyle4 = () => {
   React.useEffect(() => {
@@ -41,487 +155,33 @@ const WorksStyle4 = () => {
           </div>
 
           <div className='gallery full-width'>
-            {/* Global-Prayer */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity education lifestyle'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Global Prayer Network </h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//globalprayernetworknjnonprofit.com/'
-                  target='_blank'
+            {portfolioData.map((item, idx) => {
+              const { id, title, url, thumb, cat } = item
+
+              return (
+                <div
+                  className={`col-md-6 items graphic lg-mr wow fadeInUp ${cat}`}
+                  data-wow-delay='.4s'
+                  key={id}
                 >
-                  <img
-                    src='https://i.ibb.co/1JrWnrG/Global-Prayer.png'
-                    alt='Global-Prayer'
-                    border='0'
-                  />
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* ACOMERPR */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity environment'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>ACOMERPR</h6>
-                  <p>CLick the image to view the website.</p>
+                  <div className='item-img'>
+                    <div className='cont'>
+                      <h6>{title}</h6>
+                      <p>CLick the image to view the website.</p>
+                    </div>
+                    <a
+                      className='rota'
+                      rel='noopener noreferrer'
+                      href={url}
+                      target='_blank'
+                    >
+                      <img src={thumb} alt={title} border='0' />
+                      <div className='item-img-overlay'></div>
+                    </a>
+                  </div>
                 </div>
-                <a
-                  className='rota'
-                  href='//acomerpr.org'
-                  rel='noopener noreferrer'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/pdkPHV8/Acomper.png'
-                    alt='Acomper'
-                    border='0'
-                  />
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Lakine Hope */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Lakini Hope Organization</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  href='//lakinihope.com'
-                  rel='noopener noreferrer'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/LYpPNF6/Lakini-Hope.png'
-                    alt='Lakini Hope'
-                    border='0'
-                  />
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Acminus */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity education'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Communities Integration Ohio</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  href='//acminus.com'
-                  rel='noopener noreferrer'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/dKQkdxJ/Acminus.png'
-                    alt='Acminus'
-                    border='0'
-                  />
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Guiding Light Within Your Community INC */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Guiding Light Within Your Community INC</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  href='//guidinglightwithinyourcommunity.com'
-                  rel='noopener noreferrer'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/k5HWD3H/Light-Within.png'
-                    alt='Guiding Light Within Your Community INC'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Rotary Club of Auburn */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity education'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Rotary Club of Auburn</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//auburnrotary.org'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/vjxpgpQ/Rotary-Club.png'
-                    alt='Rotary Club of Auburn'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* 901bfit */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity lifestyle fitness'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>901bfit</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//901bfit.org'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/WpgH7Zr/901bfit.png'
-                    alt='901bfit'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Student Athletes Rock */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity fitness'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Student Athletes Rock</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//studentathletesrock.org'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/Th8JkjM/Student-Athlete.png'
-                    alt='Student-Athlete'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Inspirational Lifestyle Coach */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp lifestyle'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Inspirational Lifestyle Coach</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//inspirationallifestylecoach.com'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/GHCTHtF/Lifestyle-Coach.png'
-                    alt='Inspirational Lifestyle Coach'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* MSP Foundation */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity education'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>MSP Foundation</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//msp-foundation.org'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/DYCxLSx/Msp-foundation.png'
-                    alt='MSP Foundation'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Better Nation School */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp education'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Better Nation School</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//betternationschool.org'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/vckrLdS/Better-nation-school.png'
-                    alt='Better Nation School'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* African Youth Advocate */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity education lifestyle'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>African Youth Advocate</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//africanyouthadvocate.org'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/S63RwYm/African-Youth-Advocate.png'
-                    alt='African Youth-Advocate'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* WGI Productions */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity education'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>WGI Productions</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//wgiproductions.com'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/FBNvSjV/WGI-Profuction.png'
-                    alt='WGI Profuction'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Assured Heart Foundation */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity education'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Assured Heart Foundation</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//assuredheartfoundation.com'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/mRrfYYh/Assured.png'
-                    alt='Assured Heart Foundation'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Foyer De Berault */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Foyer De Berault</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//foyerdeberault.org'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/hZCjH8V/Foyer-D.png'
-                    alt='Foyer De Berault'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Relr Design Center */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Relr Design Center</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//elrdesigncenter.com'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/hX5gT63/Relr-Design-Center.png'
-                    alt='Relr Design Center'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Kellie FC */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Kellie FC</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//fckellie.co.uk'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/vkB4Lr5/fckellie.png'
-                    alt='Kellie FC'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
-
-            {/* Sponsor a Senior Inc */}
-            <div
-              className='col-md-6 items graphic lg-mr wow fadeInUp charity lifestyle'
-              data-wow-delay='.4s'
-            >
-              <div className='item-img'>
-                <div className='cont'>
-                  <h6>Sponsor a Senior Inc</h6>
-                  <p>CLick the image to view the website.</p>
-                </div>
-                <a
-                  className='rota'
-                  rel='noopener noreferrer'
-                  href='//sponsoraseniorinc.org'
-                  target='_blank'
-                >
-                  <img
-                    src='https://i.ibb.co/Tw2Ng34/sponsor-a-senior.png'
-                    alt='Sponsor a Senior Inc'
-                    border='0'
-                  />
-
-                  <div className='item-img-overlay'></div>
-                </a>
-              </div>
-            </div>
+              )
+            })}
           </div>
         </div>
       </div>
