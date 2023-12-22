@@ -15,7 +15,7 @@ const Footer = ({ hideBGCOLOR }) => {
               </div>
               <div className='copy-right'>
                 <p>
-                  © 2022, Fuad Hasan. Made by
+                  © 2024, Fuad Hasan. Made by
                   <Link href='https://www.fiverr.com/fuad_hasan08'>
                     <a target='_blank'>Fuad Hasan</a>
                   </Link>
