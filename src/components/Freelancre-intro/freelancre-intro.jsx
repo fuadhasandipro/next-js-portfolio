@@ -10,7 +10,7 @@ const FreelancreIntro = () => {
           <div className='col-lg-4'>
             <div className='img'>
               <img
-                src='https://i.ibb.co/tc5wJXS/hero-profile-280x280.png'
+                src='https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/b54e41b3bae3554bd8ca4e943d99cc87-1710486544378/d564803e-9bef-49ce-a7fd-84a0cc1f772d.jpg'
                 alt='hero_profile'
               />
             </div>
